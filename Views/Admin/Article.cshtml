@@ -1,0 +1,32 @@
+﻿@using MyBlog2.Models
+@{
+    ViewBag.Title = "Artile";
+    var articles = ViewBag.Articles;
+}
+
+<a class="linkeffect underline" href="@Url.Action("ArticleCreate", "Admin")" data="Add">Add</a>
+
+<div class="adminarticle">
+    @foreach (Article article in articles)
+    {
+        <div >
+            <p><a href="@Url.Action("ArticleEdit","Admin",new{id=article.ID})">@article.Title</a></p>
+            <p class="delete"><a href="javascript:" onclick="deleteArticle(@article.ID)">Delete</a></p>
+        </div>
+    }
+</div>
+
+<script>
+    function deleteArticle(id) {
+        if (confirm("You will delete this article.")) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("ArticleDelete", "Admin")',
+                data: { id: id }
+            }).done(function () {
+                window.location.reload();
+                alert('Delete Complete');
+            });
+        }
+    }
+</script>

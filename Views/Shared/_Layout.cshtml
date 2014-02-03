@@ -1,0 +1,54 @@
+﻿@using MyBlog2.Models
+@{
+    var categoryId = ViewBag.Category ?? 0;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="headnav">
+        <h1><a style="color:white;" href="@Url.Action("Index", "Home")">Blog v2.0</a></h1>
+        @if (ViewContext.RouteData.Values["controller"].ToString().ToLower() != "admin")
+        {
+            <a class="linkeffect twounderline" href="@Url.Action("Index", "Home")">Home</a>
+            
+            <a class="linkeffect twounderline" href="javascript:" onclick=" ToggleCategory() ">Category</a>
+            <div id="categorydiv">
+                @foreach (Category category in ViewBag.Categories)
+                {
+                    <a class="linkeffect twounderline category" id="@category.ID" href="@Url.Action("Category", "Article", new { categoryId = category.ID })">- @category.Title</a>
+                }
+            </div>
+            <a class="linkeffect twounderline" href="@Url.Action("About", "Home")">About</a>
+        }
+        else
+        {
+            <a class="linkeffect twounderline" href="@Url.Action("Article", "Admin")">Article</a>
+            <a class="linkeffect twounderline" href="@Url.Action("Category", "Admin")">Category</a>
+        }
+    </nav>
+    <div class="layoutbodydiv">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+<script>
+    function ToggleCategory() {
+        $('#categorydiv').slideToggle();
+    }
+
+    $(document).ready(function() {
+        if (@categoryId !== 0) {
+            $('.category#@categoryId').addClass('whiteunderline');
+            $('#categorydiv').show();
+        }
+    });
+</script>
+</html>

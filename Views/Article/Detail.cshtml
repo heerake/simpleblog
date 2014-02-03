@@ -1,0 +1,10 @@
+﻿@using MyBlog2.Models
+@{
+    Article article = ViewBag.Article;
+    ViewBag.Title = article.Title;
+}
+<div class="articlediv">
+    <h3 class="articletitle"><a href="@Url.Action("Detail", "Article", new { id = article.ID })">@article.Title</a></h3>
+    <p class="articletime">@article.CreateOn</p>
+    <p class="articleparagraph">@Html.Raw(article.Content)</p>
+</div>

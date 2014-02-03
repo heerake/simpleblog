@@ -1,0 +1,22 @@
+﻿@using MyBlog2.Models
+<form id="form" action="@Url.Action("ArticleCreate","Admin")" method="POST">
+    <input id="title" name="Title" style="display: block" placeholder="Title here"/>
+    <textarea style="display: block" name="Content" rows="25" cols="150" placeholder="Content here"></textarea>
+    <select name="CategoryId">
+        <option>------</option>
+        @foreach (Category categpry in ViewBag.Categories)
+        {
+            <option value="@categpry.ID">@categpry.Title</option>
+        }
+    </select>
+    <p><a class="submit" href="javascript:" onclick="submitform()">Submit</a></p>
+</form>
+<script>
+    function submitform() {
+        if ($('#title').val().length === 0) {
+            alert("The title cannot be empty.");
+        } else {
+            $('#form').submit();
+        }
+    }
+</script>

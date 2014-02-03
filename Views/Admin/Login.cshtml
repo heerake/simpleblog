@@ -1,0 +1,16 @@
+﻿<form id="form" action="@Url.Action("Login","Admin")" method="POST">
+    <input id="account" name="Account" style="display: block" placeholder="Account"/>
+    <input id="password" type="password" name="Password" style="display: block" placeholder="Password"/>
+    <p><a class="submit" href="javascript:" onclick="submitform()">Login</a></p>
+</form>
+<script>
+    function submitform() {
+        if ($('#account').val().length === 0) {
+            alert("The account cannot be empty.");
+        } else if ($('#password').val().length === 0) {
+            alert("The password cannot be empty.");
+        } else {
+            $('#form').submit();
+        }
+    }
+</script>

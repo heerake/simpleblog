@@ -1,0 +1,196 @@
+﻿body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,
+form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{font:12px/1.5 "Helvetica Neue",Helvetica,Arial,SimSun,sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:12px;}
+ul,ol{list-style:none;}
+a{text-decoration:none;color: black;}
+a:hover{text-decoration:none;}
+a:visited{ color: black;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+h1 {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 1em 1em;
+
+}
+
+div.layoutbodydiv {
+    left: 10em;
+    position: relative;
+    padding: 2em 5em;
+    width: 800px;
+}
+
+nav.headnav {
+    display: block;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    width: 10em;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    padding: 1em 1em 0;
+    
+}
+
+#categorydiv {
+    display: none;
+}
+
+h3.articletitle {
+    font-size: 2em;
+    color: black;
+}
+
+
+
+::selection{
+		color: #fff;
+		text-shadow: none;
+		background: black;
+	}
+
+.articleparagraph {
+    white-space: pre-wrap;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.articlediv {
+    margin-bottom: 3em;
+}
+
+.adminarticle {
+    margin: 2em;
+    width: 40%;
+}
+
+.adminarticle div {
+    margin: 0.5em 0;
+}
+
+.adminarticle p {
+    display: inline;
+}
+.adminarticle p.delete {
+    float: right;
+}
+
+input {
+    border-style: none;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+textarea {
+    border-style: none;
+    padding: 0.5em;
+}
+
+input:focus {
+    outline-color: black;
+}
+
+textarea:focus {
+    outline-color: black;
+}
+
+.submit {
+    border: solid 1px black;
+    padding: 0.3em;
+    margin-top: 1em;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.submit:hover {
+    background-color: black;
+    color: white;
+}
+
+.whiteunderline {
+    border-bottom: 2px solid white;
+}
+
+select {
+    padding: 0.2em 0.3em;
+}
+select:focus {
+    border-color: gray;
+    outline-color: black;
+}
+option {
+    margin: 0.1em 0.3em;
+}

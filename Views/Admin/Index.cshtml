@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="adminarticle">
+    <div>
+        <p>Hello, @Context.User.Identity.Name!</p>
+        <p style="float: right"><a href="@Url.Action("Logout", "Admin")">Logout</a></p>
+    </div>
+</div>

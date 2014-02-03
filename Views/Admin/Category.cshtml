@@ -1,0 +1,54 @@
+﻿@using MyBlog2.Models
+@{
+    ViewBag.Title = "Category";
+    var categories = ViewBag.Categories;
+    int index = 0;
+}
+
+<a class="linkeffect underline" href="javascript:" onclick="addCategory()" data="Add">Add</a>
+
+<form id="form" action="@Url.Action("CategoryCreate", "Admin")"  method="POST">
+<div class="adminarticle">
+    @foreach (Category category in categories)
+    {
+        <div class="category" style="width: 500px;">
+            <input type="hidden" name="categories[@index].ID" value="@category.ID"/>
+            <input type="text" name="categories[@index].Title" value="@category.Title"/>
+            <input type="text" name="categories[@index].Order" value="@category.Order"/>
+            <p class="delete"><a href="javascript:" onclick="deleteCategory(this)">Delete</a></p>
+        </div>
+        index++;
+    }
+    <p id="submit">
+        <a class="submit" href="javascript:" onclick="submitform()">Submit</a>
+        <a class="submit" href="javascript:" onclick="cancel()">Cancel</a>
+    </p>
+</div>
+</form>
+<script>
+    function addCategory() {
+        $('#submit').before('<div  class="category" style="width: 500px;"><input type="hidden"/>' +
+            '<input type="text" placeholder="New Category"/>' +
+            '<input type="text" placeholder="Order"/><p class="delete"><a href="javascript:" onclick="deleteCategory(this)">Delete</a></p></div>');
+        resetIndex();
+    }
+    function deleteCategory(obj) {
+        $(obj).parent().parent().remove();
+        resetIndex();
+    }
+    function cancel() {
+        window.location.reload();
+    }
+    function resetIndex() {
+        var index = 0;
+        $('.category').each(function () {
+            $($(this).children('input')[0]).attr('name', 'categories[' + index + '].ID');
+            $($(this).children('input')[1]).attr('name', 'categories[' + index + '].Title');
+            $($(this).children('input')[2]).attr('name', 'categories[' + index + '].Order');
+            index++;
+        });
+    }
+    function submitform() {
+        $('#form').submit();
+    }
+</script>

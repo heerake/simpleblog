@@ -1,0 +1,237 @@
+﻿a.linkeffect {
+    position: relative;
+    display: inline-block;
+    color: whitesmoke;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0.3em 1.2em 0.3em;
+}
+
+a:hover {
+}
+
+a.brackets {
+    color: black;
+}
+a.brackets::after, a.brackets::before {
+    opacity: 0;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.3s,opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s,opacity 0.2s;
+    transition: transform 0.3s,opacity 0.2s;
+}
+
+a.brackets:hover::before, a.brackets:hover::after {
+    opacity: 1;
+}
+
+a.brackets:hover::before {
+    -webkit-transform: translateX(-10px);
+    -moz-transform: translateX(-10px);
+    transform: translateX(-10px);
+}
+
+a.brackets::before {
+    content: "[";
+}
+
+a.brackets:hover::after {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+a.brackets::after {
+    content: "]";
+}
+
+
+
+
+
+a.underline {
+    color: black;
+}
+
+    a.underline::before {
+        position: absolute;
+        content: attr(data);
+        border-bottom: 2px solid black;
+        overflow: hidden;
+        max-width: 0;
+        top: 0;
+        left: 0;
+        color: black;
+        -webkit-transition: max-width 0.3s;
+        -moz-transition: max-width 0.3s;
+        transition: max-width 0.3s;
+    }
+
+    a.underline:hover::before {
+        max-width: 100%;
+    }
+
+
+
+
+
+a.rotate {
+    line-height: 2em;
+    padding: 0 2em;
+    background-color: #0099FF;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+    a.rotate::before {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0965a0;
+        content: attr(data);
+        -webkit-transition: background-color 0.6s;
+        -moz-transition: background-color 0.6s;
+        transition: background-color 0.6s;
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        transform: rotateX(-90deg);
+        -webkit-transform-origin: 50% 0;
+        -moz-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+    }
+
+    a.rotate:hover {
+        -webkit-transform: rotateX(90deg) translateY(-1em);
+        -moz-transform: rotateX(90deg) translateY(-1em);
+        transform: rotateX(90deg) translateY(-1em);
+    }
+
+        a.rotate:hover::before {
+            background-color: #0099FF;
+        }
+
+
+
+a.twounderline {
+}
+
+    a.twounderline::before, a.twounderline::after {
+        position: absolute;
+        content: "";
+        border-bottom: 2px solid white;
+        overflow: hidden;
+        width: 0;
+        top: 100%;
+        left: 50%;
+        color: white;
+        -webkit-transition: width 0.3s;
+        -moz-transition: width 0.3s;
+        transition: width 0.3s;
+    }
+
+    a.twounderline::after {
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    a.twounderline:hover::before, a.twounderline:hover::after {
+        width: 50%;
+    }
+
+
+
+a.doorplate {
+    line-height: 2em;
+    padding: 0 2em;
+    border-top: 2px solid SlateGray;
+}
+
+    a.doorplate::before {
+        position: absolute;
+        line-height: 2em;
+        padding: 0 2em;
+        left: 0;
+        top: 0;
+        content: attr(data);
+        color: #0e83cd;
+        background-color: white;
+        -webkit-transform: rotateX(270deg);
+        -moz-transform: rotateX(270deg);
+        transform: rotateX(270deg);
+        -webkit-transition: -webkit-transform 0.6s;
+        -moz-transition: -webkit-transform 0.6s;
+        transition: -webkit-transform 0.6s;
+        -webkit-transition: -webkit-transform 0.6s;
+        -moz-transition: -webkit-transform 0.6s;
+        transition: -webkit-transform 0.6s;
+        -webkit-transition-timing-function: ease;
+        -moz-transition-timing-function: ease;
+        transition-timing-function: ease;
+        -webkit-transform-origin: 0 0;
+    }
+
+    a.doorplate:hover::before {
+        -webkit-transform: rotateX(15deg);
+    }
+
+
+
+a.shadowin {
+    color: gray;
+}
+
+    a.shadowin::before {
+        content: attr(data);
+        position: absolute;
+        color: white;
+        opacity: 0;
+        -webkit-transform: rotate(25deg) translate(1em,-1em);
+        -moz-transform: rotate(25deg) translate(1em,-1em);
+        transform: rotate(25deg) translate(1em,-1em);
+        -webkit-transform-origin: 100% 100%;
+        -moz-transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
+        -webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
+        -moz-transition: opacity 0.3s,-webkit-transform 0.3s;
+        transition: opacity 0.3s,-webkit-transform 0.3s;
+    }
+
+    a.shadowin:hover::before {
+        opacity: 1;
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+
+
+a.shadowout::before {
+    content: attr(data);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: opacity 0.3s,-webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s,-webkit-transform 0.3s;
+    transition: opacity 0.3s,-webkit-transform 0.3s;
+}
+
+a.shadowout:hover::before {
+    opacity: 0;
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    transform: scale(3);
+}
